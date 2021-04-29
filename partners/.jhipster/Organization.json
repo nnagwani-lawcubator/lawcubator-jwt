@@ -1,0 +1,93 @@
+{
+  "name": "Organization",
+  "fields": [
+    {
+      "fieldName": "orgName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "orgSize",
+      "fieldType": "CompanySize",
+      "fieldValues": "SMALL (1-50),MID (51-250),LARGE (250+)"
+    },
+    {
+      "fieldName": "orgCity",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "orgState",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "orgAddress1",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "orgAddress2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgAdmin",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "orgCompanySize",
+      "fieldType": "CompanySize",
+      "fieldValues": "SMALL (1-50),MID (51-250),LARGE (250+)",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updateTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "branch",
+      "otherEntityRelationshipName": "organization",
+      "relationshipName": "branch"
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "subdomain",
+      "otherEntityRelationshipName": "orgId",
+      "relationshipName": "subdomain",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "organization",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "partners",
+  "clientRootFolder": "partners",
+  "databaseType": "sql",
+  "changelogDate": "20210429163509"
+}

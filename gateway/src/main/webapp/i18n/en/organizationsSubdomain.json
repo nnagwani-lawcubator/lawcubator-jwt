@@ -1,0 +1,36 @@
+{
+  "gatewayApp": {
+    "organizationsSubdomain": {
+      "home": {
+        "title": "Subdomains",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Subdomain",
+        "createOrEditLabel": "Create or edit a Subdomain",
+        "notFound": "No Subdomains found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Subdomain {{ id }}?"
+      },
+      "detail": {
+        "title": "Subdomain"
+      },
+      "id": "ID",
+      "subdomainName": "Subdomain Name",
+      "iPAddress": "I P Address",
+      "orgID": "Org ID",
+      "port": "Port",
+      "createdBy": "Created By",
+      "createTime": "Create Time",
+      "updatedBy": "Updated By",
+      "updateTime": "Update Time",
+      "orgId": "Org Id"
+    }
+  },
+  "organizationsApp": {
+    "organizationsSubdomain": {
+      "created": "A new Subdomain is created with identifier {{ param }}",
+      "updated": "A Subdomain is updated with identifier {{ param }}",
+      "deleted": "A Subdomain is deleted with identifier {{ param }}"
+    }
+  }
+}

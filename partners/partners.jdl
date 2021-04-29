@@ -1,0 +1,70 @@
+entity Branch {
+  BranchName String required,
+  BranchAdmin String required
+  ParentOrgID Integer required,
+  CreatedBy Integer required,
+  CreateTime Instant required,
+  UpdatedBy Integer required,
+  UpdateTime Instant required
+}
+
+
+entity Organization {
+  OrgName String required,
+  OrgSize CompanySize, 
+  OrgCity String required,
+  OrgState String required,
+  OrgAddress1 String required,
+  OrgAddress2 String,
+  OrgAdmin Integer required,
+  OrgCompanySize CompanySize required,
+  CreatedBy Integer required,
+  CreateTime Instant required,
+  UpdatedBy Integer required,
+  UpdateTime Instant required
+}
+
+enum CompanySize {
+  SMALL("1-50"),
+  MID("51-250"),
+  LARGE("250+")
+}
+
+entity Branch {
+ BranchName String required,
+ BranchCity String required,
+ BranchAddress1 String required,
+ BranchAddress2 String,
+ BranchAdmin Integer required,
+ OrgID Integer required,
+ CreatedBy Integer required,
+ CreateTime Instant required,
+ UpdateBy Integer required,
+ UpdateTime Instant required
+
+}
+
+entity Subdomain {
+ SubdomainName String required,
+ IPAddress String required,
+ OrgID Integer required,
+ Port String required,
+ CreatedBy Integer required,
+ CreateTime Instant required,
+ UpdatedBy Integer required,
+ UpdateTime Instant required
+}
+
+
+relationship OneToMany {
+Organization{branch} to Branch{organization}
+}
+
+relationship OneToOne {
+ Subdomain{OrgId} to Organization{subdomain}
+}
+
+dto * with mapstruct
+service Organization, Branch, Subdomain with serviceImpl
+paginate Organization, Branch, Subdomain with pagination
+microservice Organization, Branch, Subdomain with organizations

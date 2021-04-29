@@ -1,0 +1,38 @@
+{
+  "gatewayApp": {
+    "organizationsBranch": {
+      "home": {
+        "title": "Branches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Branch",
+        "createOrEditLabel": "Create or edit a Branch",
+        "notFound": "No Branches found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Branch {{ id }}?"
+      },
+      "detail": {
+        "title": "Branch"
+      },
+      "id": "ID",
+      "branchName": "Branch Name",
+      "branchCity": "Branch City",
+      "branchAddress1": "Branch Address 1",
+      "branchAddress2": "Branch Address 2",
+      "branchAdmin": "Branch Admin",
+      "orgID": "Org ID",
+      "createdBy": "Created By",
+      "createTime": "Create Time",
+      "updateBy": "Update By",
+      "updateTime": "Update Time",
+      "organization": "Organization"
+    }
+  },
+  "organizationsApp": {
+    "organizationsBranch": {
+      "created": "A new Branch is created with identifier {{ param }}",
+      "updated": "A Branch is updated with identifier {{ param }}",
+      "deleted": "A Branch is deleted with identifier {{ param }}"
+    }
+  }
+}
