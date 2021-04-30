@@ -1,0 +1,34 @@
+application {
+  config {
+    baseName notification,
+    applicationType microservice,
+    packageName com.lawcubator.notification,
+    serviceDiscoveryType eureka,
+    authenticationType jwt,
+    databaseType sql,
+    prodDatabaseType mysql,
+    devDatabaseType mysql,
+    cacheProvider no,
+    enableHibernateCache false,
+    buildTool maven,
+    serverPort 8082,
+    skipUserManagement true
+  }
+  entities Notification
+}
+
+entity Notification {
+    date Instant required
+    details String
+    sentDate Instant required
+    format NotificationType required
+    userId Long required
+    orgId Long required
+}
+enum NotificationType {
+    EMAIL, SMS
+}
+
+dto * with mapstruct
+service Notification with serviceImpl
+microservice Notification with notification
